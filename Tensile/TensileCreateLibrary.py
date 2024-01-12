@@ -1139,6 +1139,8 @@ def TensileCreateLibrary():
 
   if ";" in arguments["Architecture"]:
     archs = arguments["Architecture"].split(";") # user arg list format
+  elif "," in arguments["Architecture"]:
+    archs = arguments["Architecture"].split(",") # user arg list format
   else:
     archs = arguments["Architecture"].split("_") # workaround for cmake list in list issue
   logicArchs = set()
